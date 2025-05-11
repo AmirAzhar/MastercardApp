@@ -10,11 +10,13 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.mastercardapp.ui.theme.MastercardAppTheme
-import com.example.mastercardapp.Screen
+import androidx.core.view.WindowCompat
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // ignore the status bar
+        WindowCompat.setDecorFitsSystemWindows(window, false)
         setContent {
             MastercardAppTheme {
                 val navController = rememberNavController()
@@ -36,11 +38,6 @@ fun AppNavigator(navController: NavHostController) {
             composable(Screen.Terms.route) { TermsScreen(navController) }
         }
     }
-}
-
-@Composable
-fun CoverScreen(navController: NavHostController) {
-    Text("Cover Screen")
 }
 
 @Composable
