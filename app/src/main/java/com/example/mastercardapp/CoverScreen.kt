@@ -13,7 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-
+import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.asPaddingValues
 
 @Composable
 fun CoverScreen(navController: NavHostController) {
@@ -36,7 +37,9 @@ fun CoverScreen(navController: NavHostController) {
                 .padding(horizontal = 24.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
-            Column {
+            Column(
+                verticalArrangement = Arrangement.spacedBy(16.dp)
+            ) {
                 Spacer(modifier = Modifier.height(12.dp))
 
                 Image(
@@ -46,8 +49,6 @@ fun CoverScreen(navController: NavHostController) {
                         .height(36.dp)
                         .padding(top = 8.dp)
                 )
-
-                Spacer(modifier = Modifier.height(32.dp))
 
                 Text(
                     text = "Mastercard\nPayment Wearable",
@@ -63,8 +64,6 @@ fun CoverScreen(navController: NavHostController) {
                     fontSize = 32.sp,
                     color = Color.LightGray
                 )
-
-                Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
                     text = "1 May 2025, Mastercard Experience Center.\nDuo Tower, Singapore.",
@@ -88,4 +87,3 @@ fun CoverScreen(navController: NavHostController) {
         }
     }
 }
-
