@@ -32,9 +32,7 @@ fun CoverScreen(navController: NavHostController) {
         Column(
             modifier = Modifier
                 .fillMaxSize()
-                // padding for the status bar
-                .padding(WindowInsets.systemBars.asPaddingValues())
-                .padding(horizontal = 24.dp),
+                .padding(horizontal = 24.dp, vertical = 24.dp),
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Column(
@@ -46,8 +44,8 @@ fun CoverScreen(navController: NavHostController) {
                     painter = painterResource(id = R.drawable.logo),
                     contentDescription = "Logo",
                     modifier = Modifier
-                        .height(36.dp)
-                        .padding(top = 8.dp)
+                        .height(28.dp)
+                        .padding(top = 4.dp)
                 )
 
                 Text(
