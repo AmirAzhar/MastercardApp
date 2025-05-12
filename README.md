@@ -40,3 +40,4 @@ The final screen shows legal information in a fixed text block styled inside a r
 ![Compose Basics](https://developer.android.com/codelabs/jetpack-compose-basics#0)
 ![Compose Components](https://developer.android.com/develop/ui/compose/components)
 ![Hide Statuc Bars](https://developer.android.com/develop/ui/views/layout/immersive)
+![Add Overlay Blur](https://timilehin-ty.medium.com/an-overlay-blur-with-androids-jetpack-compose-is-harder-than-it-should-be-e4e4e983cd11)

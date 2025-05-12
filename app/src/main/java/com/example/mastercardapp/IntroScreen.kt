@@ -3,6 +3,7 @@ package com.example.mastercardapp
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -19,10 +20,13 @@ import androidx.navigation.NavHostController
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ChevronLeft
 import androidx.compose.material3.Icon
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 
 // store details of the diff pages
 data class IntroPage(val image: Int, val title: String, val description: String)
 
+// Todo: When navigating back from terms, it should go back to the last visited page
 @Composable
 fun IntroScreen(navController: NavHostController) {
     val pages = listOf(
@@ -190,9 +194,22 @@ fun IntroScreen(navController: NavHostController) {
                         fontSize = 16.sp,
                         color = Color.LightGray
                     )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text(
+                        text = "SKIP",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Bold,
+                        style = LocalTextStyle.current.copy(textDecoration = TextDecoration.Underline),
+                        modifier = Modifier.clickable {
+                            navController.navigate(Screen.Terms.route)
+                        }
+                    )
+
                 }
 
-                // Todo: Add skip nav to terms
             }
         }
 
