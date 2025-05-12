@@ -22,6 +22,9 @@ import androidx.compose.material.icons.filled.ChevronLeft
 import androidx.compose.material3.Icon
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import com.example.mastercardapp.ui.theme.Background
+import com.example.mastercardapp.ui.theme.Gray
+import com.example.mastercardapp.ui.theme.Primary
 
 // store details of the diff pages
 data class IntroPage(val image: Int, val title: String, val description: String)
@@ -45,7 +48,7 @@ fun IntroScreen(navController: NavHostController) {
             Column(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFF141414))
+                    .background(Background)
                     .padding(horizontal = 24.dp, vertical = 24.dp)
             ) {
                 Row(
@@ -65,9 +68,9 @@ fun IntroScreen(navController: NavHostController) {
                         modifier = Modifier.weight(0.6f),
                         shape = RoundedCornerShape(50),
                         colors = ButtonDefaults.outlinedButtonColors(
-                            contentColor = Color(0xFFFF6600)
+                            contentColor = Primary
                         ),
-                        border = BorderStroke(1.dp, Color(0xFFFF6600))
+                        border = BorderStroke(1.dp, Primary)
                     ) {
                         Text("Back")
                     }
@@ -84,7 +87,7 @@ fun IntroScreen(navController: NavHostController) {
                         },
                         modifier = Modifier.weight(1.4f),
                         shape = RoundedCornerShape(50),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF6600))
+                        colors = ButtonDefaults.buttonColors(containerColor = Primary)
                     ) {
                         Text("Next")
                     }
@@ -98,7 +101,7 @@ fun IntroScreen(navController: NavHostController) {
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize()
-                .background(Color(0xFF141414))
+                .background(Background)
         ) {
             val imageHeight = maxHeight * 0.6f
 
@@ -149,7 +152,7 @@ fun IntroScreen(navController: NavHostController) {
                                     }
                                 },
                                 shape = RoundedCornerShape(50),
-                                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF6600)),
+                                colors = ButtonDefaults.buttonColors(containerColor = Primary),
                                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
                             ) {
                                 Text("Close", color = Color.White)
@@ -162,7 +165,7 @@ fun IntroScreen(navController: NavHostController) {
                 Column(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .background(Color(0xFF141414))
+                        .background(Background)
                         .padding(24.dp),
                     horizontalAlignment = Alignment.Start
                 ) {
@@ -172,7 +175,7 @@ fun IntroScreen(navController: NavHostController) {
                                 modifier = Modifier
                                     .size(10.dp)
                                     .background(
-                                        if (index == pageId) Color(0xFFFF6600) else Color.Gray,
+                                        if (index == pageId) Primary else Gray,
                                         CircleShape
                                     )
                             )
@@ -184,7 +187,8 @@ fun IntroScreen(navController: NavHostController) {
                     Text(
                         text = currPage.title,
                         fontSize = 22.sp,
-                        color = Color.White
+                        color = Color.White,
+                        fontWeight = FontWeight.Black,
                     )
 
                     Spacer(modifier = Modifier.height(8.dp))

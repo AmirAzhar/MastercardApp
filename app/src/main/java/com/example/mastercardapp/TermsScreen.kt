@@ -18,6 +18,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.foundation.Image
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import com.example.mastercardapp.ui.theme.Background
+import com.example.mastercardapp.ui.theme.BackgroundLight
+import com.example.mastercardapp.ui.theme.Primary
 
 
 @Composable
@@ -29,7 +32,7 @@ fun TermsScreen(navController: NavHostController) {
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFF141414))
+                    .background(Background)
                     .padding(horizontal = 24.dp, vertical = 24.dp)
             ) {
                 OutlinedButton(
@@ -38,10 +41,10 @@ fun TermsScreen(navController: NavHostController) {
                             popUpTo(Screen.Cover.route) { inclusive = true }
                         }
                     },
-                    modifier = Modifier.weight(0.6f),
+                    modifier = Modifier.weight(0.65f),
                     shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFFFF6600)),
-                    border = BorderStroke(1.dp, Color(0xFFFF6600))
+                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Primary),
+                    border = BorderStroke(1.dp, Primary)
                 ) {
                     Text("Disagree")
                 }
@@ -54,9 +57,9 @@ fun TermsScreen(navController: NavHostController) {
                             popUpTo(Screen.Cover.route) { inclusive = true }
                         }
                     },
-                    modifier = Modifier.weight(1.4f),
+                    modifier = Modifier.weight(1.35f),
                     shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF6600))
+                    colors = ButtonDefaults.buttonColors(containerColor = Primary)
                 ) {
                     Text("Agree")
                 }
@@ -67,13 +70,13 @@ fun TermsScreen(navController: NavHostController) {
             modifier = Modifier
                 .padding(padding)
                 .fillMaxSize()
-                .background(Color(0xFF141414))
+                .background(Background)
         ) {
             // top bar - same as intro screen
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .background(Color(0xFF141414))
+                    .background(Background)
                     .padding(horizontal = 24.dp, vertical = 24.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
@@ -91,7 +94,7 @@ fun TermsScreen(navController: NavHostController) {
                         }
                     },
                     shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFF6600)),
+                    colors = ButtonDefaults.buttonColors(containerColor = Primary),
                     contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
                 ) {
                     Text("Close", color = Color.White)
@@ -116,7 +119,7 @@ fun TermsScreen(navController: NavHostController) {
             Column(
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
-                    .background(Color(0xFF1E1E1E), shape = RoundedCornerShape(12.dp))
+                    .background(BackgroundLight, shape = RoundedCornerShape(12.dp))
                     .padding(20.dp)
                     // make scrollable
                     .verticalScroll(rememberScrollState())

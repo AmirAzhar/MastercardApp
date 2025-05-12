@@ -15,6 +15,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.compose.foundation.layout.WindowInsets
 import androidx.compose.foundation.layout.asPaddingValues
+import com.example.mastercardapp.ui.theme.Primary
 
 @Composable
 fun CoverScreen(navController: NavHostController) {
@@ -36,7 +37,6 @@ fun CoverScreen(navController: NavHostController) {
             verticalArrangement = Arrangement.SpaceBetween
         ) {
             Column(
-                verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 Spacer(modifier = Modifier.height(12.dp))
 
@@ -47,6 +47,8 @@ fun CoverScreen(navController: NavHostController) {
                         .height(28.dp)
                         .padding(top = 4.dp)
                 )
+
+                Spacer(modifier = Modifier.height(20.dp))
 
                 Text(
                     text = "Mastercard\nPayment Wearable",
@@ -60,8 +62,11 @@ fun CoverScreen(navController: NavHostController) {
                 Text(
                     text = "Experience",
                     fontSize = 32.sp,
-                    color = Color.LightGray
+                    color = Color.LightGray,
+                    fontWeight = FontWeight.Black
                 )
+
+                Spacer(modifier = Modifier.height(20.dp))
 
                 Text(
                     text = "1 May 2025, Mastercard Experience Center.\nDuo Tower, Singapore.",
@@ -78,7 +83,7 @@ fun CoverScreen(navController: NavHostController) {
                     .padding(horizontal = 8.dp),
                 shape = RoundedCornerShape(50),
                 // FF to show 100% opacity
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFCF4500))
+                colors = ButtonDefaults.buttonColors(containerColor = Primary)
             ) {
                 Text("Continue", color = Color.White)
             }

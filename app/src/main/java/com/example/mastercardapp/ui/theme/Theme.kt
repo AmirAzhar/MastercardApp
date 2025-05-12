@@ -1,58 +1,42 @@
 package com.example.mastercardapp.ui.theme
 
-import android.app.Activity
-import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.Typography
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
+private val MastercardColorScheme = darkColorScheme(
+    primary = Primary,
+    background = Background,
+    surface = BackgroundLight,
+    onPrimary = Color.White,
+    onBackground = Color.White,
+    onSurface = Gray
 )
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
-
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+private val MastercardTypography = Typography(
+    displayLarge = Typography().displayLarge.copy(fontFamily = Inter),
+    displayMedium = Typography().displayMedium.copy(fontFamily = Inter),
+    displaySmall = Typography().displaySmall.copy(fontFamily = Inter),
+    headlineLarge = Typography().headlineLarge.copy(fontFamily = Inter),
+    headlineMedium = Typography().headlineMedium.copy(fontFamily = Inter),
+    headlineSmall = Typography().headlineSmall.copy(fontFamily = Inter),
+    titleLarge = Typography().titleLarge.copy(fontFamily = Inter),
+    titleMedium = Typography().titleMedium.copy(fontFamily = Inter),
+    titleSmall = Typography().titleSmall.copy(fontFamily = Inter),
+    bodyLarge = Typography().bodyLarge.copy(fontFamily = Inter),
+    bodyMedium = Typography().bodyMedium.copy(fontFamily = Inter),
+    bodySmall = Typography().bodySmall.copy(fontFamily = Inter),
+    labelLarge = Typography().labelLarge.copy(fontFamily = Inter),
+    labelMedium = Typography().labelMedium.copy(fontFamily = Inter),
+    labelSmall = Typography().labelSmall.copy(fontFamily = Inter),
 )
 
 @Composable
-fun MastercardAppTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
+fun MastercardAppTheme(content: @Composable () -> Unit) {
     MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
+        colorScheme = MastercardColorScheme,
+        typography = MastercardTypography,
         content = content
     )
 }
