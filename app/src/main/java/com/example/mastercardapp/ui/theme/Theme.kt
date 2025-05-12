@@ -5,6 +5,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
+// Todo: Figure out how to properly use the theme
 private val MastercardColorScheme = darkColorScheme(
     primary = Primary,
     background = Background,

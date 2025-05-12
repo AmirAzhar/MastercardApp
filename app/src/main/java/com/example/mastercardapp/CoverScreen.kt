@@ -13,9 +13,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
+import com.example.mastercardapp.OutlineText
 import com.example.mastercardapp.ui.theme.Primary
+
 
 @Composable
 fun CoverScreen(navController: NavHostController) {
@@ -50,6 +50,7 @@ fun CoverScreen(navController: NavHostController) {
 
                 Spacer(modifier = Modifier.height(20.dp))
 
+                // Todo: Change Font
                 Text(
                     text = "Mastercard\nPayment Wearable",
                     fontSize = 32.sp,
@@ -58,15 +59,10 @@ fun CoverScreen(navController: NavHostController) {
                     fontWeight = FontWeight.Black
                 )
 
-                // TODO: Change text style to be outlined
-                Text(
-                    text = "Experience",
-                    fontSize = 32.sp,
-                    color = Color.LightGray,
-                    fontWeight = FontWeight.Black
-                )
+                // outlined text
+                OutlineText(text = "Experience")
 
-                Spacer(modifier = Modifier.height(20.dp))
+                Spacer(modifier = Modifier.height(50.dp))
 
                 Text(
                     text = "1 May 2025, Mastercard Experience Center.\nDuo Tower, Singapore.",

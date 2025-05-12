@@ -43,3 +43,4 @@ The final screen shows legal information in a fixed text block styled inside a r
 ![Add Overlay Blur](https://timilehin-ty.medium.com/an-overlay-blur-with-androids-jetpack-compose-is-harder-than-it-should-be-e4e4e983cd11)
 ![MD lib](https://github.com/jeziellago/compose-markdown)
 ![Theme](https://medium.com/@riztech.dev/theming-and-styling-in-jetpack-compose-with-materialtheme-c0c8254d8404)
+![Text Outline](https://stackoverflow.com/questions/66958260/how-to-outline-text-in-jetpack-compose)
