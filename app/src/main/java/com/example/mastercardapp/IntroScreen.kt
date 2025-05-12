@@ -114,7 +114,7 @@ fun IntroScreen(navController: NavHostController) {
                     )
 
                     // overlay top bar
-                    // Todo: Add blur 
+                    // Todo: Add blur
                     Row(
                         modifier = Modifier
                             .fillMaxWidth()

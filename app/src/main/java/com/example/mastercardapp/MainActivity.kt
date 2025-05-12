@@ -44,7 +44,3 @@ fun AppNavigator(navController: NavHostController) {
 }
 
 
-@Composable
-fun TermsScreen(navController: NavHostController) {
-    Text("Terms & Conditions Screen")
-}

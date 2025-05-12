@@ -27,7 +27,16 @@ The slides are managed by a single composable. It updates based on the current s
 
 The layout uses `BoxWithConstraints` to size the image to 60% of screen height. The top app bar is overlaid on the image with a translucent background. The Back button is styled with an orange outline to match the brand. Closing the onboarding takes you back to the cover screen.
 
+### Terms & Conditions
+
+The final screen shows legal information in a fixed text block styled inside a rounded dark card. At the top, there’s a logo and a Close button. At the bottom, users can choose:
+
+- **Agree** -> takes the user back to the cover screen
+- **Disagree** -> also goes back to the cover screen
 
 ## References
 
+![Jetpack Compose Cheatsheet](https://blog.stackademic.com/jetpack-compose-cheatsheet-your-quick-guide-to-modern-android-ui-development-0f24b5d6b7fe)
+![Compose Basics](https://developer.android.com/codelabs/jetpack-compose-basics#0)
 ![Compose Components](https://developer.android.com/develop/ui/compose/components)
+![Hide Statuc Bars](https://developer.android.com/develop/ui/views/layout/immersive)
