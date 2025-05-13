@@ -22,6 +22,9 @@ import androidx.compose.material.icons.filled.ChevronLeft
 import androidx.compose.material3.Icon
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.clipToBounds
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.Gray
 import com.example.mastercardapp.ui.theme.Primary
@@ -29,7 +32,6 @@ import com.example.mastercardapp.ui.theme.Primary
 // store details of the diff pages
 data class IntroPage(val image: Int, val title: String, val description: String)
 
-// Todo: When navigating back from terms, it should go back to the last visited page
 @Composable
 fun IntroScreen(navController: NavHostController) {
     val pages = listOf(
@@ -38,7 +40,8 @@ fun IntroScreen(navController: NavHostController) {
         IntroPage(R.drawable.intro_3, "No battery — No charging", "Pay seamlessly and continuously, without worrying about phone battery or managing multiple cards.")
     )
 
-    var pageId by remember { mutableIntStateOf(0) }
+    // this is like a useState that i can use to keep track of the slide im in
+    var pageId by rememberSaveable { mutableIntStateOf(0) }
     val currPage = pages[pageId]
 
     // layout struct to help add bottom bar
@@ -113,6 +116,7 @@ fun IntroScreen(navController: NavHostController) {
                         .padding(bottom = 16.dp)
                 ) {
                     // bg image
+                    // Todo: maybe add a nice carousel like animation with swipe
                     Image(
                         painter = painterResource(id = currPage.image),
                         contentDescription = "Intro Bg",

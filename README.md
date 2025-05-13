@@ -45,3 +45,4 @@ The final screen shows legal information in a fixed text block styled inside a r
 ![Theme](https://medium.com/@riztech.dev/theming-and-styling-in-jetpack-compose-with-materialtheme-c0c8254d8404)
 ![Text Outline](https://stackoverflow.com/questions/66958260/how-to-outline-text-in-jetpack-compose)
 ![Fonts](https://developer.android.com/develop/ui/compose/text/fonts)
+![States](https://medium.com/mobile-innovation-network/understanding-the-difference-between-remember-and-remembersaveable-in-jetpack-compose-29d7231053e5)
