@@ -71,5 +71,6 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.3")
     implementation("androidx.navigation:navigation-compose:2.7.0")
     implementation("androidx.compose.material:material-icons-extended")
+    implementation("com.github.jeziellago:compose-markdown:0.5.7")
 
 }

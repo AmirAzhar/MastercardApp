@@ -33,8 +33,8 @@ data class IntroPage(val image: Int, val title: String, val description: String)
 fun IntroScreen(navController: NavHostController) {
     val pages = listOf(
         IntroPage(R.drawable.intro_1, "Pay and unlock in style", "The wearable uses tokenization to ensure hassle-free and secure payments, making your daily transactions smoother and more convenient."),
-        IntroPage(R.drawable.intro_2, "Choose any Mastercard", "Whether it’s a credit, debit, or prepaid card, you can tokenize it in the same wearable. Ready for payment 24/7."),
-        IntroPage(R.drawable.intro_3, "No battery — No charging", "Pay seamlessly and continuously, without worrying about phone battery or managing multiple cards.")
+        IntroPage(R.drawable.intro_2, "Choose any Mastercard™", "Whether it’s a credit, debit, or prepaid card, you can tokenize it into the wearable within seconds. Ready for payment 24/7."),
+        IntroPage(R.drawable.intro_3, "No battery —\nNo charging required", "Pay seamlessly and reliably without worrying about phone battery or carrying multiple cards.")
     )
 
     // this is like a useState that i can use to keep track of the slide im in
