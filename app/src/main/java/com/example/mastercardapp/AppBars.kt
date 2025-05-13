@@ -26,7 +26,7 @@ fun AppTopBar(
         modifier = modifier
             .fillMaxWidth()
             .background(Color.Black.copy(alpha = 0.7f))
-            .padding(horizontal = 24.dp, vertical = 24.dp),
+            .padding(horizontal = 24.dp, vertical = 12.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -40,7 +40,7 @@ fun AppTopBar(
             onClick = onClose,
             shape = RoundedCornerShape(50),
             colors = ButtonDefaults.buttonColors(containerColor = Primary),
-            contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
+            contentPadding = PaddingValues(horizontal = 16.dp),
         ) {
             Text("Close", color = Color.White)
         }
