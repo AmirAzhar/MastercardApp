@@ -1,12 +1,10 @@
-package com.example.mastercardapp
+package com.example.mastercardapp.screens
 
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -20,8 +18,9 @@ import androidx.navigation.NavHostController
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.runtime.saveable.rememberSaveable
-import com.example.mastercardapp.ui.components.AppTopBar
-import com.example.mastercardapp.ui.components.AppBottomBar
+import com.example.mastercardapp.R
+import com.example.mastercardapp.components.AppTopBar
+import com.example.mastercardapp.components.AppBottomBar
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.Gray
 import com.example.mastercardapp.ui.theme.Primary

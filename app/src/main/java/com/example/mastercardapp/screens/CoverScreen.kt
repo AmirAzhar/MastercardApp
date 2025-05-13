@@ -1,4 +1,4 @@
-package com.example.mastercardapp
+package com.example.mastercardapp.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -13,7 +13,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import com.example.mastercardapp.OutlineText
+import com.example.mastercardapp.components.OutlineText
+import com.example.mastercardapp.R
 import com.example.mastercardapp.ui.theme.Mark
 import com.example.mastercardapp.ui.theme.Primary
 

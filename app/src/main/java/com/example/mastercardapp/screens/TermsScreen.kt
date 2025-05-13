@@ -1,4 +1,4 @@
-package com.example.mastercardapp
+package com.example.mastercardapp.screens
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -15,8 +15,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.compose.ui.text.style.TextAlign
-import com.example.mastercardapp.ui.components.AppTopBar
-import com.example.mastercardapp.ui.components.AppBottomBar
+import com.example.mastercardapp.components.AppTopBar
+import com.example.mastercardapp.components.AppBottomBar
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.BackgroundLight
 import dev.jeziellago.compose.markdowntext.MarkdownText

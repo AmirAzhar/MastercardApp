@@ -1,4 +1,4 @@
-package com.example.mastercardapp
+package com.example.mastercardapp.components
 
 import android.graphics.Typeface
 import androidx.compose.foundation.Canvas
@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
 import androidx.core.content.res.ResourcesCompat
 import androidx.compose.ui.platform.LocalContext
+import com.example.mastercardapp.R
 
 
 @Composable

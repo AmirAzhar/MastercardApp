@@ -14,6 +14,10 @@ import com.example.mastercardapp.ui.theme.MastercardAppTheme
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.example.mastercardapp.screens.CoverScreen
+import com.example.mastercardapp.screens.IntroScreen
+import com.example.mastercardapp.screens.Screen
+import com.example.mastercardapp.screens.TermsScreen
 
 
 class MainActivity : ComponentActivity() {

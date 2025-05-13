@@ -1,4 +1,4 @@
-package com.example.mastercardapp
+package com.example.mastercardapp.screens
 
 // define all the routes here
 sealed class Screen(val route: String) {

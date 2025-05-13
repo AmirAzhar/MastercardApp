@@ -1,4 +1,4 @@
-package com.example.mastercardapp.ui.components
+package com.example.mastercardapp.components
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
