@@ -155,7 +155,7 @@ fun IntroScreen(navController: NavHostController) {
                                 colors = ButtonDefaults.buttonColors(containerColor = Primary),
                                 contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
                             ) {
-                                Text("Close", color = Color.White)
+                                Text("Close", color = Color.White, fontWeight = FontWeight.Bold)
                             }
                         }
                     }
@@ -188,7 +188,7 @@ fun IntroScreen(navController: NavHostController) {
                         text = currPage.title,
                         fontSize = 22.sp,
                         color = Color.White,
-                        fontWeight = FontWeight.Black,
+                        fontWeight = FontWeight.Bold,
                     )
 
                     Spacer(modifier = Modifier.height(8.dp))

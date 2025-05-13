@@ -97,7 +97,7 @@ fun TermsScreen(navController: NavHostController) {
                     colors = ButtonDefaults.buttonColors(containerColor = Primary),
                     contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
                 ) {
-                    Text("Close", color = Color.White)
+                    Text("Close", color = Color.White, fontWeight = FontWeight.Bold)
                 }
             }
 
@@ -120,13 +120,12 @@ fun TermsScreen(navController: NavHostController) {
                 modifier = Modifier
                     .padding(horizontal = 16.dp)
                     .background(BackgroundLight, shape = RoundedCornerShape(12.dp))
-                    .padding(20.dp)
+                    .padding(24.dp)
                     // make scrollable
                     .verticalScroll(rememberScrollState())
                     .weight(1f)
             ) {
 
-                Spacer(modifier = Modifier.height(16.dp))
 
                 Text(
                     text = "1. Personal Information We May Collect",

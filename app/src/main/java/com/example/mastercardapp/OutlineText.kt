@@ -11,6 +11,8 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.sp
+import androidx.core.content.res.ResourcesCompat
+import androidx.compose.ui.platform.LocalContext
 
 
 @Composable
@@ -25,13 +27,16 @@ fun OutlineText(
     val density = LocalDensity.current
     val fontSizePx = with(density) { fontSizeSp.toPx() }
 
+    val context = LocalContext.current
+
+
     Canvas(modifier = Modifier.wrapContentSize()) {
         val nativeCanvas = drawContext.canvas.nativeCanvas
 
         val paint = android.graphics.Paint().apply {
             isAntiAlias = true
             textSize = fontSizePx
-            typeface = Typeface.create(Typeface.DEFAULT, Typeface.BOLD)
+            typeface = Typeface.create(ResourcesCompat.getFont(context, R.font.markpro_bold), Typeface.NORMAL)
             textAlign = android.graphics.Paint.Align.LEFT
         }
 

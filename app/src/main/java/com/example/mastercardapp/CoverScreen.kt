@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.mastercardapp.OutlineText
+import com.example.mastercardapp.ui.theme.Mark
 import com.example.mastercardapp.ui.theme.Primary
 
 
@@ -50,13 +51,13 @@ fun CoverScreen(navController: NavHostController) {
 
                 Spacer(modifier = Modifier.height(20.dp))
 
-                // Todo: Change Font
                 Text(
                     text = "Mastercard\nPayment Wearable",
                     fontSize = 32.sp,
                     color = Color.White,
                     lineHeight = 42.sp,
-                    fontWeight = FontWeight.Black
+                    fontWeight = FontWeight.Bold,
+                    fontFamily = Mark
                 )
 
                 // outlined text
@@ -67,7 +68,8 @@ fun CoverScreen(navController: NavHostController) {
                 Text(
                     text = "1 May 2025, Mastercard Experience Center.\nDuo Tower, Singapore.",
                     fontSize = 14.sp,
-                    color = Color.White
+                    color = Color.White,
+                    fontFamily = Mark
                 )
             }
 
