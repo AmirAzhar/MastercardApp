@@ -14,57 +14,34 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
-import androidx.compose.ui.Alignment
-import androidx.compose.foundation.Image
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import com.example.mastercardapp.ui.components.AppTopBar
+import com.example.mastercardapp.ui.components.AppBottomBar
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.BackgroundLight
-import com.example.mastercardapp.ui.theme.Primary
 
 
 @Composable
 fun TermsScreen(navController: NavHostController) {
     Scaffold(
         containerColor = Color.Black,
-        // btm bar - same as intro screen
         bottomBar = {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Background)
-                    .padding(horizontal = 24.dp, vertical = 24.dp)
-            ) {
-                OutlinedButton(
-                    onClick = {
-                        navController.navigate(Screen.Cover.route) {
-                            popUpTo(Screen.Cover.route) { inclusive = true }
-                        }
-                    },
-                    modifier = Modifier.weight(0.65f),
-                    shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.outlinedButtonColors(contentColor = Primary),
-                    border = BorderStroke(1.dp, Primary)
-                ) {
-                    Text("Disagree")
+            AppBottomBar(
+                backLabel = "Disagree",
+                nextLabel = "Agree",
+                onBack = {
+                    navController.navigate(Screen.Cover.route) {
+                        popUpTo(Screen.Cover.route) { inclusive = true }
+                    }
+                },
+                onNext = {
+                    navController.navigate(Screen.Cover.route) {
+                        popUpTo(Screen.Cover.route) { inclusive = true }
+                    }
                 }
-
-                Spacer(modifier = Modifier.width(16.dp))
-
-                Button(
-                    onClick = {
-                        navController.navigate(Screen.Cover.route) {
-                            popUpTo(Screen.Cover.route) { inclusive = true }
-                        }
-                    },
-                    modifier = Modifier.weight(1.35f),
-                    shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.buttonColors(containerColor = Primary)
-                ) {
-                    Text("Agree")
-                }
-            }
+            )
         }
+
     ) { padding ->
         Column(
             modifier = Modifier
@@ -72,34 +49,14 @@ fun TermsScreen(navController: NavHostController) {
                 .fillMaxSize()
                 .background(Background)
         ) {
-            // top bar - same as intro screen
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Background)
-                    .padding(horizontal = 24.dp, vertical = 24.dp),
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.logo),
-                    contentDescription = "Logo",
-                    modifier = Modifier.height(24.dp)
-                )
-
-                Button(
-                    onClick = {
-                        navController.navigate(Screen.Cover.route) {
-                            popUpTo(Screen.Cover.route) { inclusive = true }
-                        }
-                    },
-                    shape = RoundedCornerShape(50),
-                    colors = ButtonDefaults.buttonColors(containerColor = Primary),
-                    contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
-                ) {
-                    Text("Close", color = Color.White, fontWeight = FontWeight.Bold)
+            AppTopBar(
+                onClose = {
+                    navController.navigate(Screen.Cover.route) {
+                        popUpTo(Screen.Cover.route) { inclusive = true }
+                    }
                 }
-            }
+            )
+
 
             Spacer(modifier = Modifier.height(16.dp))
 

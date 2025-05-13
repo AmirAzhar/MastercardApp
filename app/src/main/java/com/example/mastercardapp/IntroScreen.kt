@@ -23,8 +23,8 @@ import androidx.compose.material3.Icon
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.runtime.saveable.rememberSaveable
-import androidx.compose.ui.draw.blur
-import androidx.compose.ui.draw.clipToBounds
+import com.example.mastercardapp.ui.components.AppTopBar
+import com.example.mastercardapp.ui.components.AppBottomBar
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.Gray
 import com.example.mastercardapp.ui.theme.Primary
@@ -48,55 +48,28 @@ fun IntroScreen(navController: NavHostController) {
     Scaffold(
         containerColor = Color.Black,
         bottomBar = {
-            Column(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .background(Background)
-                    .padding(horizontal = 24.dp, vertical = 24.dp)
-            ) {
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    OutlinedButton(
-                        onClick = {
-                            if (pageId == 0) {
-                                navController.navigate(Screen.Cover.route) {
-                                    popUpTo(Screen.Cover.route) { inclusive = true }
-                                }
-                            } else {
-                                pageId--
-                            }
-                        },
-                        modifier = Modifier.weight(0.6f),
-                        shape = RoundedCornerShape(50),
-                        colors = ButtonDefaults.outlinedButtonColors(
-                            contentColor = Primary
-                        ),
-                        border = BorderStroke(1.dp, Primary)
-                    ) {
-                        Text("Back")
+            AppBottomBar(
+                backLabel = "Back",
+                nextLabel = "Next",
+                onBack = {
+                    if (pageId == 0) {
+                        navController.navigate(Screen.Cover.route) {
+                            popUpTo(Screen.Cover.route) { inclusive = true }
+                        }
+                    } else {
+                        pageId--
                     }
-
-                    Spacer(modifier = Modifier.width(16.dp))
-
-                    Button(
-                        onClick = {
-                            if (pageId < pages.lastIndex) {
-                                pageId++
-                            } else {
-                                navController.navigate(Screen.Terms.route)
-                            }
-                        },
-                        modifier = Modifier.weight(1.4f),
-                        shape = RoundedCornerShape(50),
-                        colors = ButtonDefaults.buttonColors(containerColor = Primary)
-                    ) {
-                        Text("Next")
+                },
+                onNext = {
+                    if (pageId < pages.lastIndex) {
+                        pageId++
+                    } else {
+                        navController.navigate(Screen.Terms.route)
                     }
                 }
-            }
+            )
         }
+
     ) { padding ->
         // actual content
         // vs normal box, we can have access to maxHeight and maxWidth -> allow for more responsiveness
@@ -125,44 +98,13 @@ fun IntroScreen(navController: NavHostController) {
                     )
 
                     // overlay top bar
-                    // Todo: Add blur
-                    Row(
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .background(Color.Black.copy(alpha = 0.7f))
-                            .padding(horizontal = 24.dp, vertical = 24.dp),
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Image(
-                            painter = painterResource(id = R.drawable.logo),
-                            contentDescription = "Logo",
-                            modifier = Modifier.height(24.dp)
-                        )
-
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Icon(
-                                imageVector = Icons.Filled.ChevronLeft,
-                                contentDescription = "Back",
-                                tint = Color.White
-                            )
-                            Spacer(modifier = Modifier.width(8.dp))
-                            Button(
-                                onClick = {
-                                    navController.navigate(Screen.Cover.route) {
-                                        popUpTo(Screen.Cover.route) { inclusive = true }
-                                    }
-                                },
-                                shape = RoundedCornerShape(50),
-                                colors = ButtonDefaults.buttonColors(containerColor = Primary),
-                                contentPadding = PaddingValues(horizontal = 16.dp, vertical = 2.dp)
-                            ) {
-                                Text("Close", color = Color.White, fontWeight = FontWeight.Bold)
+                    AppTopBar(
+                        onClose = {
+                            navController.navigate(Screen.Cover.route) {
+                                popUpTo(Screen.Cover.route) { inclusive = true }
                             }
                         }
-                    }
+                    )
                 }
 
                 // title and desc
