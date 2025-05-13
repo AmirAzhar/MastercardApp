@@ -53,16 +53,16 @@ This file consists of 2 reusable UI bars - top and bottom. These bars are being 
 
 ## References
 
-![Jetpack Compose Cheatsheet](https://blog.stackademic.com/jetpack-compose-cheatsheet-your-quick-guide-to-modern-android-ui-development-0f24b5d6b7fe)
-![Compose Basics](https://developer.android.com/codelabs/jetpack-compose-basics#0)
-![Compose Components](https://developer.android.com/develop/ui/compose/components)
-![Hide Status Bars](https://developer.android.com/develop/ui/views/layout/immersive)
-![Add Overlay Blur](https://timilehin-ty.medium.com/an-overlay-blur-with-androids-jetpack-compose-is-harder-than-it-should-be-e4e4e983cd11)
-![MD lib](https://github.com/jeziellago/compose-markdown)
-![Theme](https://medium.com/@riztech.dev/theming-and-styling-in-jetpack-compose-with-materialtheme-c0c8254d8404)
-![Text Outline](https://stackoverflow.com/questions/66958260/how-to-outline-text-in-jetpack-compose)
-![Fonts](https://developer.android.com/develop/ui/compose/text/fonts)
-![States](https://medium.com/mobile-innovation-network/understanding-the-difference-between-remember-and-remembersaveable-in-jetpack-compose-29d7231053e5)
+[Jetpack Compose Cheatsheet](https://blog.stackademic.com/jetpack-compose-cheatsheet-your-quick-guide-to-modern-android-ui-development-0f24b5d6b7fe)
+[Compose Basics](https://developer.android.com/codelabs/jetpack-compose-basics#0)
+[Compose Components](https://developer.android.com/develop/ui/compose/components)
+[Hide Status Bars](https://developer.android.com/develop/ui/views/layout/immersive)
+[Add Overlay Blur](https://timilehin-ty.medium.com/an-overlay-blur-with-androids-jetpack-compose-is-harder-than-it-should-be-e4e4e983cd11)
+[MD lib](https://github.com/jeziellago/compose-markdown)
+[Theme](https://medium.com/@riztech.dev/theming-and-styling-in-jetpack-compose-with-materialtheme-c0c8254d8404)
+[Text Outline](https://stackoverflow.com/questions/66958260/how-to-outline-text-in-jetpack-compose)
+[Fonts](https://developer.android.com/develop/ui/compose/text/fonts)
+[States](https://medium.com/mobile-innovation-network/understanding-the-difference-between-remember-and-remembersaveable-in-jetpack-compose-29d7231053e5)
 
 ---
 
