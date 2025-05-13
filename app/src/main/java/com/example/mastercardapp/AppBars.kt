@@ -5,13 +5,17 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ChevronLeft
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.mastercardapp.R
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.Primary
@@ -20,13 +24,14 @@ import com.example.mastercardapp.ui.theme.Primary
 // Todo: Add blur
 fun AppTopBar(
     onClose: () -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    showChevron: Boolean = true
 ) {
     Row(
         modifier = modifier
             .fillMaxWidth()
             .background(Color.Black.copy(alpha = 0.7f))
-            .padding(horizontal = 24.dp, vertical = 12.dp),
+            .padding(horizontal = 24.dp, vertical = 20.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -36,16 +41,31 @@ fun AppTopBar(
             modifier = Modifier.height(24.dp)
         )
 
-        Button(
-            onClick = onClose,
-            shape = RoundedCornerShape(50),
-            colors = ButtonDefaults.buttonColors(containerColor = Primary),
-            contentPadding = PaddingValues(horizontal = 16.dp),
+        Row(
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("Close", color = Color.White)
+            if (showChevron) {
+                Icon(
+                    imageVector = Icons.Filled.ChevronLeft,
+                    contentDescription = "Back",
+                    tint = Color.White,
+                    modifier = modifier.height(16.dp)
+                )
+                Spacer(modifier = Modifier.width(6.dp))
+            }
+            Button(
+                onClick = onClose,
+                shape = RoundedCornerShape(50),
+                colors = ButtonDefaults.buttonColors(containerColor = Primary),
+                contentPadding = PaddingValues(0.dp),
+                modifier = modifier.height(24.dp)
+            ) {
+                Text("Close", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 10.sp)
+            }
         }
     }
 }
+
 
 
 @Composable

@@ -55,7 +55,8 @@ fun TermsScreen(navController: NavHostController) {
                     navController.navigate(Screen.Cover.route) {
                         popUpTo(Screen.Cover.route) { inclusive = true }
                     }
-                }
+                },
+                showChevron = false
             )
 
 
