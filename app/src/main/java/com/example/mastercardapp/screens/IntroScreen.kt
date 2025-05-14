@@ -24,6 +24,8 @@ import com.example.mastercardapp.components.AppBottomBar
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.Gray
 import com.example.mastercardapp.ui.theme.Primary
+import androidx.compose.ui.platform.testTag
+
 
 // store details of the diff pages
 data class IntroPage(val image: Int, val title: String, val description: String)
@@ -116,6 +118,7 @@ fun IntroScreen(navController: NavHostController) {
                             Box(
                                 modifier = Modifier
                                     .size(10.dp)
+                                    .testTag("dot_$index")
                                     .background(
                                         if (index == pageId) Primary else Gray,
                                         CircleShape

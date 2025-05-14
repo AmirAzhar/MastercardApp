@@ -20,6 +20,7 @@ import com.example.mastercardapp.components.AppBottomBar
 import com.example.mastercardapp.ui.theme.Background
 import com.example.mastercardapp.ui.theme.BackgroundLight
 import dev.jeziellago.compose.markdowntext.MarkdownText
+import androidx.compose.ui.platform.testTag
 
 
 @Composable
@@ -83,6 +84,7 @@ fun TermsScreen(navController: NavHostController) {
                     // make scrollable
                     .verticalScroll(rememberScrollState())
                     .weight(1f)
+                    .testTag("termsScroll")
             ) {
 
                 MarkdownText(

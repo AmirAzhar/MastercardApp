@@ -9,7 +9,7 @@ Users go through each screen one step at a time.
 
 ## Design Decisions
 
-### Why Kotlin and Jetpack Compose
+### Kotlin and Jetpack Compose
 
 I used Android because I don't have a Mac for iOS. I picked Kotlin because I hadn't used it before and would like to explore it
 
@@ -19,7 +19,15 @@ I used Jetpack Compose instead of XML because:
 - It handles state better i.e. with remember
 
 ## Project Structure
-Todo: Please add some content
+| Folder/File                  | Description                                  |
+| ---------------------------- |----------------------------------------------|
+| `components/`                | Reusable comps                               |
+| `screens/`                   | Composables for each screen                  |
+| `ui.theme/`                  | Theme setup: colors, fonts, and typography   |
+| `MainActivity.kt`            | App entry point - sets up  screen navigation |
+| `res/`                       | fonts and images                             |
+| `androidTest/com.example...` | UI tests                                     |
+| `test/com.example...`        | Reserved for unit tests (not used yet)       |
 
 ## Screens
 
@@ -51,6 +59,35 @@ This screen shows legal text in a dark card. At the top, there’s a logo and Cl
 
 This file consists of 2 reusable UI bars - top and bottom. These bars are being used by the intro and terms screens
 
+## Testing Strategy
+i decided to write simple tests that cover the core interactions in the app. Since it is built in jetpack compose, I'll be using Compose UI tests to verify. Here's what I'll be testing:
+
+- AppBars.kt
+  - Top App Bar
+    - Clicking the Close button triggers the callback ✅
+    - The Chevron icon is visible or hidden based on the flag ✅
+  - Bottom App Bar
+    - Clicking Back calls the onBack handler ✅
+    - Clicking Next calls the onNext handler ✅
+
+- CoverScreen.kt
+  - Tapping Continue navigates to the intro slides ✅
+
+- IntroScreen.kt
+  - Next button goes to the next slide ✅
+  - Back button navigates prev slide if not on first slide ✅
+  - Back button navigates to the Cover screen if on first slide ✅
+  - Skip go to the Terms screen ✅
+  - The dots update correctly as the slide changes ✅
+  
+- TermsScreen.kt
+  - Tapping Agree returns to the Cover screen ✅
+  - Tapping Disagree returns to the Cover screen ✅
+  - The terms section is scrollable ✅
+
+If I had more time, maybe I could have done more testing
+- visual snapshot tests using tools like Paparazzi to catch any issues with the design and layout
+
 ## References
 
 [Jetpack Compose Cheatsheet](https://blog.stackademic.com/jetpack-compose-cheatsheet-your-quick-guide-to-modern-android-ui-development-0f24b5d6b7fe)
@@ -63,6 +100,7 @@ This file consists of 2 reusable UI bars - top and bottom. These bars are being 
 [Text Outline](https://stackoverflow.com/questions/66958260/how-to-outline-text-in-jetpack-compose)
 [Fonts](https://developer.android.com/develop/ui/compose/text/fonts)
 [States](https://medium.com/mobile-innovation-network/understanding-the-difference-between-remember-and-remembersaveable-in-jetpack-compose-29d7231053e5)
+[Testing](https://developer.android.com/develop/ui/compose/testing/testing-cheatsheet)
 
 ---
 
@@ -74,4 +112,4 @@ This file consists of 2 reusable UI bars - top and bottom. These bars are being 
 - TermsScreen.kt
   - add scroll bar - scroll bar only for compose desktop, so need create custom or use library
 - Theme.kt
-  - how do i properly use this???
+  - not integrated properly
